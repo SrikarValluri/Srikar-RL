@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/reporter.py", line 218, in <module>
+    reporter.run()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/reporter.py", line 181, in run
+    time.sleep(ray_constants.REPORTER_UPDATE_INTERVAL_MS / 1000)
+KeyboardInterrupt

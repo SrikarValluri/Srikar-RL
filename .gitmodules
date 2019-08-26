@@ -1,0 +1,6 @@
+[submodule "cassie-mujoco-sim"]
+	path = cassie-mujoco-sim
+	url = https://github.com/osudrl/cassie-mujoco-sim.git
+[submodule "cassie-rl-testing"]
+	path = cassie-rl-testing
+	url = https://github.com/osudrl/cassie-rl-testing.git

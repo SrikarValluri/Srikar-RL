@@ -1,0 +1,29 @@
+Ray worker pid: 41070
+/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/numpy/core/fromnumeric.py:3118: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/numpy/core/_methods.py:85: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/workers/default_worker.py", line 98, in <module>
+    ray.worker.global_worker.main_loop()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1052, in main_loop
+    self._wait_for_and_process_task(task)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1003, in _wait_for_and_process_task
+    self._process_task(task, execution_info)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 908, in _process_task
+    self.actors[key], *arguments)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/function_manager.py", line 792, in actor_method_executor
+    method_returns = method(actor, *args)
+  File "/home/beast/srikar/apex/rl/algos/td3.py", line 172, in collect_experience
+    self.policy_perturbed, self.policy, self.param_noise, device)
+  File "/home/beast/srikar/apex/rl/utils/param_noise.py", line 52, in perturb_actor_parameters
+    perturbed_policy.load_state_dict(unperturbed_policy.state_dict())
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 763, in load_state_dict
+    load(self)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 761, in load
+    load(child, prefix + name + '.')
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 758, in load
+    state_dict, prefix, local_metadata, True, missing_keys, unexpected_keys, error_msgs)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 710, in _load_from_state_dict
+    param.copy_(input_param)
+KeyboardInterrupt

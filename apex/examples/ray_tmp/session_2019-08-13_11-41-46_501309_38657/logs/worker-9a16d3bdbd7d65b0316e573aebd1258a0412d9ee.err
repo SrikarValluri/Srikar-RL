@@ -1,0 +1,26 @@
+Ray worker pid: 38771
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/workers/default_worker.py", line 84, in <module>
+    ray.worker.connect(node, mode=ray.WORKER_MODE)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1934, in connect
+    worker.profiler.start_flush_thread()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/profiling.py", line 88, in start_flush_thread
+    self.t.start()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/threading.py", line 851, in start
+    self._started.wait()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/threading.py", line 551, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/threading.py", line 295, in wait
+    waiter.acquire()
+KeyboardInterrupt
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1484, in shutdown
+    disconnect()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1979, in disconnect
+    worker.profiler.join_flush_thread()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/profiling.py", line 92, in join_flush_thread
+    self.t.join()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/threading.py", line 1051, in join
+    raise RuntimeError("cannot join thread before it is started")
+RuntimeError: cannot join thread before it is started

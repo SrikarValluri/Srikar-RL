@@ -1,0 +1,69 @@
+NodeManager:
+InitialConfigResources: {CPU,64.000000}
+ClusterResources:
+cf32b3880f05bff94216f504dc59a394fda61e8f: 
+- total: {CPU,64.000000}
+- avail: {CPU,55.000000}
+ObjectManager:
+- num local objects: 2697
+- num active wait requests: 30
+- num unfulfilled push requests: 0
+- num pull requests: 0
+- num buffered profile events: 0
+ObjectDirectory:
+- num listeners: 59
+ObjectStoreNotificationManager:
+- num adds processed: 2697
+- num removes processed: 0
+BufferPool:
+- get buffer state map size: 0
+- create buffer state map size: 0
+ConnectionPool:
+- num message send connections: 0
+- num transfer send connections: 0
+- num avail message send connections: 0
+- num avail transfer send connections: 0
+- num message receive connections: 0
+- num transfer receive connections: 0
+AsyncGcsClient:
+- TaskTable: num lookups: 0, num adds: 3256
+- ActorTable: num lookups: 234, num appends: 32
+- TaskReconstructionLog: num lookups: 0, num appends: 0
+- TaskLeaseTable: num lookups: 0, num adds: 3612
+- HeartbeatTable: num lookups: 0, num adds: 297
+- ErrorTable: num lookups: 0, num appends: 2
+- ProfileTable: num lookups: 0, num appends: 558
+- ClientTable: num lookups: 0, num appends: 1, cache size: 1, num removed: 0
+- JobTable: num lookups: 0, num appends: 0
+WorkerPool:
+- num workers: 64
+- num drivers: 1
+SchedulingQueue:
+- num placeable tasks: 0
+- num waiting tasks: 341
+- num ready tasks: 29
+- num running tasks: 38
+- num infeasible tasks: 0
+- num waiting for actor creation tasks: 0
+- num swap tasks: 0
+- num tasks blocked: 30
+ReconstructionPolicy:
+- num reconstructing: 0
+TaskDependencyManager:
+- task dep map size: 400
+- task req map size: 429
+- req objects map size: 0
+- local objects map size: 2790
+- pending tasks map size: 408
+LineageCache:
+- committed tasks: 0
+- child map size: 0
+- num subscribed tasks: 0
+- lineage size: 0
+ActorRegistry:
+- num live actors: 32
+- num reconstructing actors: 0
+- num dead actors: 0
+- max num handles: 32
+Remote node manager clients: 
+DebugString() time ms: 0

@@ -1,0 +1,58 @@
+Ray worker pid: 41044
+/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/numpy/core/fromnumeric.py:3118: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/numpy/core/_methods.py:85: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E0813 11:54:21.394086 41322 raylet_client.cc:341] IOError: [RayletClient] Connection closed unexpectedly. [RayletClient] Failed to push profile events.
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/workers/default_worker.py", line 98, in <module>
+    ray.worker.global_worker.main_loop()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1052, in main_loop
+    self._wait_for_and_process_task(task)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 1003, in _wait_for_and_process_task
+    self._process_task(task, execution_info)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/worker.py", line 908, in _process_task
+    self.actors[key], *arguments)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/function_manager.py", line 792, in actor_method_executor
+    method_returns = method(actor, *args)
+  File "/home/beast/srikar/apex/rl/algos/td3.py", line 189, in collect_experience
+    new_obs, reward, done, _ = self.env.step(action)
+  File "/home/beast/srikar/apex/cassie/cassie_mimic_env_standing_stepping.py", line 151, in step
+    self.step_simulation(delayed_action, policy_name)
+  File "/home/beast/srikar/apex/cassie/cassie_mimic_env_standing_stepping.py", line 140, in step_simulation
+    self.cassie_state = self.sim.step_pd(self.u)
+  File "/home/beast/srikar/apex/cassie/cassiemujoco/cassiemujoco.py", line 38, in step_pd
+    cassie_sim_step_pd(self.c, y, u)
+KeyboardInterrupt
+Exception in thread ray_import_thread:
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 185, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/import_thread.py", line 69, in _run
+    msg = import_pubsub_client.get_message()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/client.py", line 3135, in get_message
+    response = self.parse_response(block=False, timeout=timeout)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/client.py", line 3036, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/client.py", line 3013, in _execute
+    return command(*args)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 637, in read_response
+    response = self._parser.read_response()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 290, in read_response
+    response = self._buffer.readline()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 224, in readline
+    self._read_from_socket()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 199, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+

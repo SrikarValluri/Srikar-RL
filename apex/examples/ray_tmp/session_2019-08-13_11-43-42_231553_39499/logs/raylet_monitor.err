@@ -1,0 +1,10 @@
+*** Aborted at 1565721824 (unix time) try "date -d @1565721824" if you are using GNU date ***
+PC: @                0x0 (unknown)
+*** SIGTERM (@0x3e800009a4b) received by PID 39513 (TID 0x7ff014543780) from PID 39499; stack trace: ***
+    @     0x7ff013ea4890 (unknown)
+    @     0x7ff01307bb77 epoll_wait
+    @           0x41732c boost::asio::detail::epoll_reactor::run()
+    @           0x4179c9 boost::asio::detail::scheduler::run()
+    @           0x4097ff main
+    @     0x7ff012f7bb97 __libc_start_main
+    @           0x40d5b1 (unknown)

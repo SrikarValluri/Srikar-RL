@@ -1,0 +1,118 @@
+Ray worker pid: 41078
+This function is allowed to use GPUs [].
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+not enough experience yet
+optimizing at timestep 460 | time = 1.5169589519500732 | replay size = 635 | episode count = 32 | update count = 2 
+optimizing at timestep 482 | time = 0.09993886947631836 | replay size = 703 | episode count = 34 | update count = 4 
+optimizing at timestep 511 | time = 0.15318512916564941 | replay size = 709 | episode count = 35 | update count = 6 
+optimizing at timestep 541 | time = 0.15178799629211426 | replay size = 721 | episode count = 37 | update count = 8 
+optimizing at timestep 570 | time = 0.45751142501831055 | replay size = 748 | episode count = 40 | update count = 10 
+optimizing at timestep 598 | time = 0.1520242691040039 | replay size = 791 | episode count = 44 | update count = 12 
+optimizing at timestep 628 | time = 0.24220824241638184 | replay size = 815 | episode count = 45 | update count = 14 
+optimizing at timestep 658 | time = 1.0482041835784912 | replay size = 861 | episode count = 48 | update count = 16 
+optimizing at timestep 688 | time = 0.10752105712890625 | replay size = 861 | episode count = 49 | update count = 18 
+optimizing at timestep 715 | time = 1.8213887214660645 | replay size = 913 | episode count = 52 | update count = 20 
+optimizing at timestep 745 | time = 0.24713611602783203 | replay size = 932 | episode count = 54 | update count = 22 
+optimizing at timestep 774 | time = 1.1346302032470703 | replay size = 982 | episode count = 58 | update count = 24 
+optimizing at timestep 804 | time = 0.33882951736450195 | replay size = 1009 | episode count = 61 | update count = 26 
+optimizing at timestep 832 | time = 0.5105364322662354 | replay size = 1066 | episode count = 65 | update count = 28 
+optimizing at timestep 863 | time = 0.7400033473968506 | replay size = 1087 | episode count = 67 | update count = 30 
+optimizing at timestep 892 | time = 0.9564576148986816 | replay size = 1105 | episode count = 68 | update count = 32 
+optimizing at timestep 921 | time = 0.11310529708862305 | replay size = 1134 | episode count = 70 | update count = 34 
+optimizing at timestep 950 | time = 0.15795660018920898 | replay size = 1141 | episode count = 71 | update count = 36 
+optimizing at timestep 979 | time = 0.0985558032989502 | replay size = 1145 | episode count = 72 | update count = 38 
+optimizing at timestep 999 | time = 1.3362464904785156 | replay size = 1172 | episode count = 74 | update count = 40 
+optimizing at timestep 1023 | time = 0.2640068531036377 | replay size = 1180 | episode count = 75 | update count = 42 
+optimizing at timestep 1051 | time = 0.6948816776275635 | replay size = 1204 | episode count = 77 | update count = 44 
+optimizing at timestep 1081 | time = 0.5037229061126709 | replay size = 1261 | episode count = 84 | update count = 46 
+optimizing at timestep 1106 | time = 0.2401597499847412 | replay size = 1280 | episode count = 86 | update count = 48 
+optimizing at timestep 1135 | time = 0.25131821632385254 | replay size = 1302 | episode count = 88 | update count = 50 
+optimizing at timestep 1166 | time = 0.5026967525482178 | replay size = 1348 | episode count = 93 | update count = 52 
+optimizing at timestep 1196 | time = 0.641423225402832 | replay size = 1377 | episode count = 94 | update count = 54 
+optimizing at timestep 1224 | time = 0.2785162925720215 | replay size = 1392 | episode count = 97 | update count = 56 
+optimizing at timestep 1254 | time = 0.2708606719970703 | replay size = 1421 | episode count = 99 | update count = 58 
+optimizing at timestep 1283 | time = 0.5887672901153564 | replay size = 1460 | episode count = 101 | update count = 60 
+optimizing at timestep 1306 | time = 0.6110608577728271 | replay size = 1473 | episode count = 103 | update count = 62 
+optimizing at timestep 1335 | time = 0.20579791069030762 | replay size = 1495 | episode count = 105 | update count = 64 
+optimizing at timestep 1362 | time = 0.8225531578063965 | replay size = 1540 | episode count = 110 | update count = 66 
+optimizing at timestep 1384 | time = 0.24759507179260254 | replay size = 1565 | episode count = 112 | update count = 68 
+optimizing at timestep 1407 | time = 0.5122199058532715 | replay size = 1583 | episode count = 113 | update count = 70 
+optimizing at timestep 1432 | time = 0.5223276615142822 | replay size = 1620 | episode count = 116 | update count = 72 
+optimizing at timestep 1453 | time = 0.15422415733337402 | replay size = 1636 | episode count = 118 | update count = 74 
+optimizing at timestep 1476 | time = 0.2864952087402344 | replay size = 1681 | episode count = 122 | update count = 76 
+optimizing at timestep 1498 | time = 0.8298184871673584 | replay size = 1704 | episode count = 123 | update count = 78 
+optimizing at timestep 1519 | time = 0.11936807632446289 | replay size = 1704 | episode count = 123 | update count = 80 
+optimizing at timestep 1539 | time = 0.7214682102203369 | replay size = 1716 | episode count = 124 | update count = 82 
+optimizing at timestep 1560 | time = 0.9692840576171875 | replay size = 1752 | episode count = 127 | update count = 84 
+optimizing at timestep 1585 | time = 0.331315279006958 | replay size = 1777 | episode count = 130 | update count = 86 
+optimizing at timestep 1605 | time = 0.093658447265625 | replay size = 1782 | episode count = 131 | update count = 88 
+optimizing at timestep 1633 | time = 1.1278772354125977 | replay size = 1824 | episode count = 135 | update count = 90 
+optimizing at timestep 1660 | time = 0.19324779510498047 | replay size = 1855 | episode count = 137 | update count = 92 
+optimizing at timestep 1689 | time = 0.6136527061462402 | replay size = 1882 | episode count = 138 | update count = 94 
+optimizing at timestep 1718 | time = 0.616492748260498 | replay size = 1892 | episode count = 141 | update count = 96 
+optimizing at timestep 1748 | time = 0.08504176139831543 | replay size = 1905 | episode count = 142 | update count = 98 
+optimizing at timestep 1777 | time = 0.47972893714904785 | replay size = 1930 | episode count = 145 | update count = 100 
+optimizing at timestep 1806 | time = 0.3233835697174072 | replay size = 1970 | episode count = 147 | update count = 102 
+optimizing at timestep 1834 | time = 1.4981589317321777 | replay size = 1994 | episode count = 151 | update count = 104 
+optimizing at timestep 1863 | time = 0.18534088134765625 | replay size = 2010 | episode count = 152 | update count = 106 
+optimizing at timestep 1892 | time = 0.41216182708740234 | replay size = 2047 | episode count = 156 | update count = 108 
+optimizing at timestep 1917 | time = 0.2005016803741455 | replay size = 2113 | episode count = 160 | update count = 110 
+optimizing at timestep 1939 | time = 0.5814194679260254 | replay size = 2143 | episode count = 164 | update count = 112 
+optimizing at timestep 1968 | time = 0.6510598659515381 | replay size = 2194 | episode count = 166 | update count = 114 
+optimizing at timestep 1998 | time = 0.3387613296508789 | replay size = 2204 | episode count = 167 | update count = 116 
+optimizing at timestep 2028 | time = 0.15920329093933105 | replay size = 2205 | episode count = 167 | update count = 118 
+optimizing at timestep 2057 | time = 0.7385294437408447 | replay size = 2238 | episode count = 170 | update count = 120 
+optimizing at timestep 2085 | time = 0.26378440856933594 | replay size = 2262 | episode count = 173 | update count = 122 
+optimizing at timestep 2114 | time = 1.2791740894317627 | replay size = 2319 | episode count = 176 | update count = 124 
+optimizing at timestep 2143 | time = 0.4632387161254883 | replay size = 2346 | episode count = 179 | update count = 126 
+optimizing at timestep 2172 | time = 0.14833903312683105 | replay size = 2368 | episode count = 181 | update count = 128 
+optimizing at timestep 2202 | time = 0.677997350692749 | replay size = 2387 | episode count = 182 | update count = 130 
+optimizing at timestep 2230 | time = 0.10429167747497559 | replay size = 2417 | episode count = 185 | update count = 132 
+optimizing at timestep 2258 | time = 0.23898839950561523 | replay size = 2442 | episode count = 187 | update count = 134 
+optimizing at timestep 2286 | time = 0.3942553997039795 | replay size = 2465 | episode count = 189 | update count = 136 
+optimizing at timestep 2314 | time = 0.1927013397216797 | replay size = 2488 | episode count = 191 | update count = 138 
+optimizing at timestep 2340 | time = 1.1536641120910645 | replay size = 2530 | episode count = 195 | update count = 140 
+optimizing at timestep 2360 | time = 0.36122989654541016 | replay size = 2539 | episode count = 196 | update count = 142 
+optimizing at timestep 2380 | time = 1.0056533813476562 | replay size = 2561 | episode count = 198 | update count = 144 
+optimizing at timestep 2403 | time = 0.1416776180267334 | replay size = 2561 | episode count = 198 | update count = 146 
+optimizing at timestep 2425 | time = 0.8780601024627686 | replay size = 2565 | episode count = 200 | update count = 148 
+optimizing at timestep 2449 | time = 0.10522961616516113 | replay size = 2585 | episode count = 201 | update count = 150 
+optimizing at timestep 2470 | time = 0.895221471786499 | replay size = 2612 | episode count = 204 | update count = 152 
+optimizing at timestep 2497 | time = 0.3932032585144043 | replay size = 2648 | episode count = 208 | update count = 154 
+optimizing at timestep 2525 | time = 0.29262661933898926 | replay size = 2676 | episode count = 210 | update count = 156 
+optimizing at timestep 2554 | time = 0.914353609085083 | replay size = 2713 | episode count = 214 | update count = 158 
+optimizing at timestep 2577 | time = 1.211583137512207 | replay size = 2777 | episode count = 217 | update count = 160 
+env variable doesn't exist
+loading model file: /home/beast/srikar/apex/cassie/cassiemujoco/cassie.xml

@@ -1,0 +1,7 @@
+mjkey.txt
+*.p
+*.pt
+*.pk
+state_*
+.vscode/
+Pictures/

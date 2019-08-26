@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 492, in connect
+    sock = self._connect()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 550, in _connect
+    raise err
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/monitor.py", line 381, in <module>
+    monitor.run()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/monitor.py", line 327, in run
+    self._run()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/monitor.py", line 310, in _run
+    self.update_raylet_map()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/monitor.py", line 253, in update_raylet_map
+    all_raylet_nodes = ray.nodes()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/state.py", line 991, in nodes
+    return state.client_table()
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/state.py", line 386, in client_table
+    return _parse_client_table(self.redis_client)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/ray/state.py", line 36, in _parse_client_table
+    NIL_CLIENT_ID)
+  File "/home/beast/anaconda3/envs/srikar/lib/python3.6/site-packages/redis/client.py", line 772, in execute_command
