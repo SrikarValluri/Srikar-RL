@@ -21,7 +21,7 @@ for i in range(30):
     state_vector.append(v)
     state_labels.append(l)
 
-state_vector = np.reshape(np.ndarray.flatten(np.array(state_vector)), (-1, 40))
+state_vector = np.reshape(np.ndarray.flatten(np.array(state_vector)), (-1, 46))
 state_labels = np.ndarray.flatten(np.array(state_labels))
 
 print(state_vector)

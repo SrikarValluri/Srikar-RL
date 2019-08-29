@@ -4,6 +4,7 @@ import argparse
 from rl.utils import run_experiment
 from rl.policies import GaussianMLP, BetaMLP
 from rl.algos import PPO
+# from rl.algos.mirror_ppo import MirrorPPO
 
 from rl.envs.normalize import get_normalization_params, PreNormalizer
 
@@ -45,7 +46,7 @@ args.max_traj_len = 400
 args.use_gae = False
 
 
-args.name = "standing_policy_HVO_Random"
+args.name = "walking_policy"
 
 # TODO: add ability to select graphs by number
 # Interactive graphs/switch to tensorboard?

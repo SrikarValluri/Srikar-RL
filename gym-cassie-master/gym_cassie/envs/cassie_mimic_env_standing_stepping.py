@@ -28,7 +28,7 @@ class CassieMimicEnv(gym.Env):
         # self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(48,))
         # self.action_space      = spaces.Box(low=-np.inf, high=np.inf, shape=(10,) )
 
-        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(46,))
+        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(48,))
         self.action_space      = spaces.Box(low=-np.inf, high=np.inf, shape=(10,))
 
         self.qpos0 = np.copy(self.sim.qpos())
@@ -121,7 +121,7 @@ class CassieMimicEnv(gym.Env):
         # target = action + ref_pos[self.pos_idx]
         
         self.u = pd_in_t()
-        self.sim.apply_force([np.random.uniform(-30, 30), np.random.uniform(-30, 30), 0, 0, 0])
+        # self.sim.apply_force([np.random.uniform(-30, 30), np.random.uniform(-30, 30), 0, 0, 0])
         for i in range(5):
             # TODO: move setting gains out of the loop?
             # maybe write a wrapper for pd_in_t ?
@@ -143,7 +143,7 @@ class CassieMimicEnv(gym.Env):
         self.cassie_state = self.sim.step_pd(self.u)
 
     def step(self, action):
-        policy_name = 'stand'
+        policy_name = 'step'
         if self.action_time == 0:
             for i in range(3):
                 self.action_queue.append(action)
@@ -176,7 +176,7 @@ class CassieMimicEnv(gym.Env):
         return self.get_full_state(policy_name), reward, done, {}
 
     def reset(self):
-        policy_name = 'stand'
+        policy_name = 'step'
         self.phase = random.randint(0, self.phaselen)
         self.time = 0
         self.counter = 0
@@ -294,12 +294,12 @@ class CassieMimicEnv(gym.Env):
                     0.1 * np.exp(-orientation_error) + \
                     0.1 * np.exp(-spring_error)
 
-            return reward
+            return 0.5 * reward
         else:
             stand_pos = np.array([0.0, 0.0, 1.01, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.978483, -0.016400, 0.017870, -0.204896, 0.0, 0.0, 1.426700, 0.0, 
             -1.524400, 1.524400, 0.0, 0.0, 0.0, 0.0, 0.978614, 0.003860, -0.015240, -0.205103, 0.0, 0.0, 1.426700, 0.0, -1.524400, 1.524400, 0.0])
             
-            self.height_diff = np.linalg.norm(qpos[7:] - stand_pos[7:])
+            self.height_diff = np.linalg.norm(qpos[2] - 0.9)
             self.pel_vel = np.linalg.norm(qvel[0:3])
             # self.motor_torque = np.linalg.norm(self.cassie_state.motor.torque[:])
             # self.vel_diff = np.linalg.norm(np.concatenate([qvel[6:9], qvel[12], qvel[18:22], qvel[25], qvel[31]]))

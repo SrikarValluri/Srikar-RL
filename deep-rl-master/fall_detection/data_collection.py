@@ -13,10 +13,9 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--id", type=int, help="ID for parallelization")
 args = parser.parse_args()
-print(args.id)
 env = gym.make("Cassie-mimic-v0")
 
-policy = torch.load('/home/beast/srikar/deep-rl-master/examples/trained_models/standing_policy_cassiesim_1e-4.pt')
+policy = torch.load('/home/beast/srikar/deep-rl-master/examples/trained_models/standing_policy_HVO_Random.pt')
 
 def impulse(i):
     if(i == 29):
@@ -41,7 +40,7 @@ for i in range(1000):
         state = torch.Tensor(state)
         if j > 30 and j <= 80:
             state_vector.append(env.get_full_state('stand').tolist())
-        _, action = policy.act(state, 'stand')
+        _, action = policy.act(state, True)
         state, reward, done, info = env.step(np.ndarray.flatten(np.array(action)))
         # env.render()
         if j == 199:
@@ -52,8 +51,6 @@ for i in range(1000):
                 state_labels.append(np.zeros(50).tolist())
                 print("good {}".format(i))
 
-
-env.close()
 state_vector = np.array(state_vector)
 state_labels = np.ndarray.flatten(np.array(state_labels))
 v = "state_vector" + str(args.id) + ".p"
@@ -62,3 +59,4 @@ l = "state_labels" + str(args.id) + ".p"
 pickle.dump(state_vector, open(v, "wb"))
 pickle.dump(state_labels, open(l, "wb"))
 
+env.close()

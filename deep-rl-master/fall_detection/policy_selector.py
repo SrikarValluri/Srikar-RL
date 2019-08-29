@@ -11,8 +11,9 @@ from rl.policies import GaussianMLP
 import time
 
 state_vector = pickle.load(open("state_vector", "rb"))
+print(state_vector.shape)
 state_labels = np.reshape(pickle.load( open("state_labels", "rb")), (-1, 1))
-
+print(state_labels.shape)
 # s = np.arange(state_vector.shape[0])
 # np.random.shuffle(s)
 
@@ -35,20 +36,20 @@ input_nodes, hidden_nodes, output_nodes, batch_size = 46, 46, 2, 100
 
 model = nn.Sequential(nn.Linear(input_nodes, hidden_nodes), nn.ReLU(), nn.Linear(hidden_nodes, output_nodes), nn.Sigmoid())
 
-criterion = torch.nn.CrossEntropyLoss()
+criterion = torch.nn.MSELoss()
 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
-for epoch in range(1):
+for epoch in range(100):
     permutation = torch.randperm(state_vector_train.shape[0])
+    print('Epoch: ', epoch)
     for data in range(0, state_vector_train.shape[0], batch_size):
         optimizer.zero_grad()
         # Forward Propagation
         indices = permutation[data:data+batch_size]
         batch_x, batch_y = state_vector_train[indices], state_labels_train[indices]
-
         outputs = model.forward(batch_x.float())    # Compute and print loss
-        loss = criterion(outputs, batch_y.long())
+        loss = criterion(outputs, batch_y.float())
         print('data: ', data,' loss: ', loss.item())    # Zero the gradients
         
         # perform a backward pass (backpropagation)
@@ -56,6 +57,7 @@ for epoch in range(1):
         
         # Update the parameters
         optimizer.step()
+    pickle.dump(model, open("model.p", "wb"))
 
 
 
@@ -66,10 +68,9 @@ for epoch in range(1):
 correct = 0
 wrong = 0
 
-for data in range(1490000, 1490200):
-    y_pred = model(state_vector[data].unsqueeze(0).float())
-    print(state_labels[data])
-    if abs(torch.norm(state_labels[data]) - torch.norm(y_pred)) < 0.1:
+for data in range(0, 1000):
+    y_pred = model(state_vector_test[data].unsqueeze(0).float())
+    if (torch.norm(model(state_vector_test[data].unsqueeze(0).float())) > 0.5 and torch.norm(state_labels_test[data].unsqueeze(0).float()) > 0.5) or (torch.norm(model(state_vector_test[data].unsqueeze(0).float())) <= 0.5 and torch.norm(state_labels_test[data].unsqueeze(0).float()) <= 0.5):
         print("correct")
         correct += 1
     else:
@@ -77,4 +78,3 @@ for data in range(1490000, 1490200):
         wrong += 1
 print(correct/(correct + wrong) * 100)
 
-pickle.dump(model, open("model.p", "wb"))

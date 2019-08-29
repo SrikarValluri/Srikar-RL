@@ -156,7 +156,7 @@ counter_not_used_elsewhere = 0
 
 sim = CassieSim("./cassie/cassiemujoco/cassie.xml")
 
-while counter_not_used_elsewhere < 300:
+while True:
 #     if counter_not_used_elsewhere == 0:
 #         sim.set_qpos([0.0, 0.0, 1.01, 0.8, 0.0, 0.0, 0.0, 0.0045, 
 #         0.0, 0.4973, 0.9784830934748516, -0.016399716640763992, 0.017869691242100763, 
@@ -278,7 +278,7 @@ while counter_not_used_elsewhere < 300:
             state.joint.position[:],                                     # unactuated joint positions
             state.joint.velocity[:]                                      # unactuated joint velocities
     ])
-    RL_state = np.concatenate([robot_state])
+    RL_state = np.concatenate([robot_state, clock])
 
     #pretending the height is always 1.0
     # RL_state[0] = 1.0
