@@ -142,8 +142,8 @@ class CassieMimicEnv(gym.Env):
 
         self.cassie_state = self.sim.step_pd(self.u)
 
-    def step(self, action):
-        policy_name = 'step'
+    def step(self, action, policy_name):
+        # policy_name = 'step'
         if self.action_time == 0:
             for i in range(3):
                 self.action_queue.append(action)
@@ -175,8 +175,8 @@ class CassieMimicEnv(gym.Env):
 
         return self.get_full_state(policy_name), reward, done, {}
 
-    def reset(self):
-        policy_name = 'step'
+    def reset(self, policy_name):
+        # policy_name = 'step'
         self.phase = random.randint(0, self.phaselen)
         self.time = 0
         self.counter = 0
@@ -185,9 +185,9 @@ class CassieMimicEnv(gym.Env):
         else:
             # height = np.random.uniform(0.80, 1.2)
             # self.qpos0[2] = height
-            x = np.random.choice(self.random_trajectories['qpos'].shape[0], size = 1, replace = False)
-            y = np.random.choice(self.random_trajectories['qvel'].shape[0], size = 1, replace = False)
-            self.qpos0, self.qvel0 = self.random_trajectories['qpos'][x], self.random_trajectories['qvel'][y]
+            # x = np.random.choice(self.random_trajectories['qpos'].shape[0], size = 1, replace = False)
+            # y = np.random.choice(self.random_trajectories['qvel'].shape[0], size = 1, replace = False)
+            # self.qpos0, self.qvel0 = self.random_trajectories['qpos'][x], self.random_trajectories['qvel'][y]
             qpos, qvel = self.qpos0, self.qvel0
             self.prev_state = self.get_full_state('stand')
         self.sim.set_qpos(np.squeeze(qpos))
@@ -249,7 +249,7 @@ class CassieMimicEnv(gym.Env):
 
         # stand_pos = np.array([0.0, 0.0, 1.01, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.978483, -0.016400, 0.017870, -0.204896, 0.0, 0.0, 1.426700, 0.0, 
         # -1.524400, 1.524400, 0.0, 0.0, 0.0, 0.0, 0.978614, 0.003860, -0.015240, -0.205103, 0.0, 0.0, 1.426700, 0.0, -1.524400, 1.524400, 0.0])
-        if policy_name == 'stand':
+        if policy_name == 'step':
             ref_pos, ref_vel = self.get_ref_state(self.phase)
 
             weight = [0.15, 0.15, 0.1, 0.05, 0.05, 0.15, 0.15, 0.1, 0.05, 0.05]

@@ -4,3 +4,6 @@
 [submodule "cassie-rl-testing"]
 	path = cassie-rl-testing
 	url = https://github.com/osudrl/cassie-rl-testing.git
+[submodule "ik"]
+  	path = ik
+  	url = https://github.com/yeshg/ik.git
