@@ -35,8 +35,8 @@ args.lr = 1e-4 # Xie
 args.epochs = 3 # Xie
 #args.epochs = 5
 
-args.num_procs = 20
-args.num_steps = 3000 // args.num_procs
+args.num_procs = 4
+args.num_steps = 4*500 // args.num_procs
 
 #args.num_steps = 500 #// args.num_procs
 #args.num_steps = 3000 # Peng
@@ -46,7 +46,7 @@ args.max_traj_len = 400
 args.use_gae = False
 
 
-args.name = "walking_policy"
+args.name = "backward_walking_policy"
 
 # TODO: add ability to select graphs by number
 # Interactive graphs/switch to tensorboard?
@@ -54,7 +54,7 @@ args.name = "walking_policy"
 # Logging timestamps
 
 import gym
-import gym_cassie
+from gym_cassie.envs import CassieMimicEnv
 
 def gym_factory(path, **kwargs):
     from functools import partial
@@ -81,11 +81,16 @@ def gym_factory(path, **kwargs):
 
     return partial(cls, **_kwargs)
 
+def make_cassie_env(*args, **kwargs):
+    def _thunk():
+        return CassieMimicEnv(*args, **kwargs) 
+    return _thunk
+
 
 if __name__ == "__main__":
     torch.set_num_threads(1) # see: https://github.com/pytorch/pytorch/issues/13757 
 
-    env_fn = gym_factory(args.env)
+    env_fn = make_cassie_env()
 
     #env.seed(args.seed)
     #torch.manual_seed(args.seed)

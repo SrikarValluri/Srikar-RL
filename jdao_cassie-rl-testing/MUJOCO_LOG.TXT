@@ -1,0 +1,6 @@
+Tue Sep 10 09:52:16 2019
+ERROR: Could not open activation key file /home/beast/.mujoco/mjkey.txt
+
+Tue Sep 10 10:04:47 2019
+ERROR: Could not open activation key file /home/beast/.mujoco/mjkey.txt
+

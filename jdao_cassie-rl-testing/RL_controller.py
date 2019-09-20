@@ -65,7 +65,7 @@ speed = 0
 
 
 
-policy = torch.load('/home/beast/srikar/jdao_cassie-rl-testing/trained_models/nodelta_neutral_StateEst_symmetry_speed0-3_freq1-2.pt')
+policy = torch.load('/home/drl/Srikar-RL/deep-rl-master/examples/trained_models/backward_walking_policy_barely_working.pt')
 policy.eval()
 
 max_speed = 3.0
@@ -278,7 +278,7 @@ while True:
             state.joint.position[:],                                     # unactuated joint positions
             state.joint.velocity[:]                                      # unactuated joint velocities
     ])
-    RL_state = np.concatenate([robot_state, ext_state])
+    RL_state = np.concatenate([robot_state, clock])
 
     #pretending the height is always 1.0
     # RL_state[0] = 1.0

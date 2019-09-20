@@ -254,6 +254,9 @@ class PPO:
 
         start_time = time.time()
 
+        reward_iter = 0
+        reward_prev_iter = 0
+
         for itr in range(n_itr):
             print("********** Iteration {} ************".format(itr))
 
@@ -349,6 +352,9 @@ class PPO:
                 entropy = pdf.entropy().mean().item()
                 kl = kl_divergence(pdf, old_pdf).mean().item()
 
+                reward_prev_iter = reward_iter
+                reward_iter = np.mean(test.ep_returns)
+
                 logger.record("Return (test)", np.mean(test.ep_returns))
                 logger.record("Return (batch)", np.mean(batch.ep_returns))
                 logger.record("Mean Eplen",  np.mean(batch.ep_lens))
@@ -358,7 +364,7 @@ class PPO:
                 logger.dump()
 
             # TODO: add option for how often to save model
-            if itr % 10 == 0:
+            if reward_iter > reward_prev_iter:
                 self.save(policy)
 
 

@@ -34,7 +34,7 @@ class CassieMimicEnv(gym.Env):
         self.qpos0 = np.copy(self.sim.qpos())
         self.qvel0 = np.copy(self.sim.qvel()) 
 
-        self.random_trajectories = pickle.load(open('/home/beast/srikar/gym-cassie-master/gym_cassie/envs/spline_stepping_traj.pkl', 'rb'))
+        # self.random_trajectories = pickle.load(open('/home/beast/srikar/gym-cassie-master/gym_cassie/envs/spline_stepping_traj.pkl', 'rb'))
 
         dirname = os.path.dirname(__file__)
         if traj == "walking":
@@ -142,8 +142,8 @@ class CassieMimicEnv(gym.Env):
 
         self.cassie_state = self.sim.step_pd(self.u)
 
-    def step(self, action, policy_name):
-        # policy_name = 'step'
+    def step(self, action):
+        policy_name = 'step'
         if self.action_time == 0:
             for i in range(3):
                 self.action_queue.append(action)
@@ -175,9 +175,10 @@ class CassieMimicEnv(gym.Env):
 
         return self.get_full_state(policy_name), reward, done, {}
 
-    def reset(self, policy_name):
-        # policy_name = 'step'
+    def reset(self):
+        policy_name = 'step'
         self.phase = random.randint(0, self.phaselen)
+        # self.phase = 0
         self.time = 0
         self.counter = 0
         if(policy_name == 'step'):
@@ -207,7 +208,7 @@ class CassieMimicEnv(gym.Env):
         self.sim.set_qpos(qpos)
         self.sim.set_qvel(qvel)
 
-        return self.get_full_state()
+        return self.get_full_state('step')
     
     def set_joint_pos(self, jpos, fbpos=None, iters=5000): #self, jpos = 1 x 20 random 0 - pi, fbpos = 1 x 7 with first 3 random and last 4 between 0 and 1, magnitude of whole vector has to be 1
         """
@@ -294,7 +295,7 @@ class CassieMimicEnv(gym.Env):
                     0.1 * np.exp(-orientation_error) + \
                     0.1 * np.exp(-spring_error)
 
-            return 0.5 * reward
+            return reward
         else:
             stand_pos = np.array([0.0, 0.0, 1.01, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.978483, -0.016400, 0.017870, -0.204896, 0.0, 0.0, 1.426700, 0.0, 
             -1.524400, 1.524400, 0.0, 0.0, 0.0, 0.0, 0.978614, 0.003860, -0.015240, -0.205103, 0.0, 0.0, 1.426700, 0.0, -1.524400, 1.524400, 0.0])

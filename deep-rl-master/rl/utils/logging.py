@@ -41,7 +41,7 @@ class Logger():
 
         if viz:
             from visdom import Visdom
-            self.viz = Visdom()
+            self.viz = Visdom(port=6006)
             self.wins = []
             self.viz_config = self.config_monitor()
         else:
