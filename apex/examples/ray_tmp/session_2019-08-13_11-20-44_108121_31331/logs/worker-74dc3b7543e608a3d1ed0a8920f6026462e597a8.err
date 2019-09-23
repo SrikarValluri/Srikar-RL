@@ -1,3 +1,0 @@
-Ray worker pid: 31435
-2019-08-13 11:20:47,590	WARNING worker.py:343 -- WARNING: Falling back to serializing objects of type <class 'torch.nn.backends.thnn.THNNFunctionBackend'> by using pickle. This may be inefficient.
-2019-08-13 11:20:47,649	WARNING worker.py:343 -- WARNING: Falling back to serializing objects of type <class 'torch.Size'> by using pickle. This may be inefficient.

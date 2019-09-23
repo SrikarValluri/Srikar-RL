@@ -46,7 +46,7 @@ args.max_traj_len = 400
 args.use_gae = False
 
 
-args.name = "backward_walking_policy"
+args.name = "cassie_standing"
 
 # TODO: add ability to select graphs by number
 # Interactive graphs/switch to tensorboard?

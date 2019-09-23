@@ -1,6 +1,0 @@
-Ray worker pid: 29070
-[32;1mLogging data to ./logs/apex/experiments/ef738274e7/seed1.log[0m
-Created replay buffer with size 10000000.0
--------------------------------------
-|    Agent Return |            91.2 |
--------------------------------------

@@ -1,4 +1,0 @@
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-W0813 11:15:12.217586 27690 stats.h:50] Failed to create the Prometheus exporter. This doesn't affect anything except stats. Caused by: null context when constructing CivetServer. Possible problem binding to port.
-I0813 11:15:12.220805 27690 grpc_server.cc:26] object_manager server started, listening on port 38899.
-I0813 11:15:12.247541 27690 grpc_server.cc:26] NodeManager server started, listening on port 37381.

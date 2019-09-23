@@ -1,2 +1,0 @@
-external/plasma/cpp/src/plasma/store.cc:1116: Allowing the Plasma store to use up to 20GB of memory.
-external/plasma/cpp/src/plasma/store.cc:1143: Starting object store with directory /tmp and huge page support disabled

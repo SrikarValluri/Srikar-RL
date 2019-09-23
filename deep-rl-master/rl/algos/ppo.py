@@ -364,7 +364,7 @@ class PPO:
                 logger.dump()
 
             # TODO: add option for how often to save model
-            if reward_iter > reward_prev_iter:
+            if itr % 10 == 0:
                 self.save(policy)
 
 
