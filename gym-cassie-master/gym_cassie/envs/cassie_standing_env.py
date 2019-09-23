@@ -28,7 +28,7 @@ class CassieMimicEnv(gym.Env):
         self.action_space      = spaces.Box(low=-np.inf, high=np.inf, shape=(10,))
 
         # Initial Standing States
-        self.standing_states = pickle.load(open('/home/drl/Srikar-RL/gym-cassie-master/gym_cassie/envs/trajectory/initial_states_standing.pkl', 'rb'))
+        self.standing_states = pickle.load(open('/home/drl/srikar/Srikar-RL/gym-cassie-master/gym_cassie/envs/trajectory/initial_states_standing.pkl', 'rb'))
         self.goal_qpos = 0
         self.goal_qvel = 0
 
